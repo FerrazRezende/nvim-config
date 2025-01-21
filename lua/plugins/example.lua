@@ -20,6 +20,14 @@ return {
     },
   },
 
+  {
+    "vague2k/vague.nvim",
+    config = function()
+      require("vague").setup({
+        -- optional configuration here
+      })
+    end,
+  },
   -- change trouble config
   {
     "folke/trouble.nvim",

@@ -20,6 +20,21 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
+    -- Adicione o Vague.nvim
+    {
+      "winston0410/vague.nvim",
+      config = function()
+        require("vague").setup({
+          highlight = {
+            enable = true,
+            timeout = 500,
+          },
+          keymaps = {
+            toggle = "<leader>v", -- Mapeamento para alternar o Vague.nvim
+          },
+        })
+      end,
+    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -30,7 +45,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "vague", "tokynight" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
@@ -51,3 +66,6 @@ require("lazy").setup({
     },
   },
 })
+
+-- Configuração do tema
+vim.cmd([[colorscheme tokyonight]])
