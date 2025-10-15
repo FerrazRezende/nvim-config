@@ -52,5 +52,5 @@ require("lazy").setup({
   },
 })
 
--- Configuração do tema
-vim.cmd([[colorscheme tokyonight]])
+-- Lua initialization file
+vim.cmd [[colorscheme moonfly]]
